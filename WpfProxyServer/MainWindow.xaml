@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfProxyServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Proxy Server" Height="350" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="PortTextBox" Grid.Row="0" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                 Text="8080"/>
+        <TextBox x:Name="TargetUrlTextBox" Grid.Row="1" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                 Text="http://local.testfueleconomy.gov.sa:8090/"/>
+
+        <TextBox x:Name="LogTextBox" Grid.Row="2" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                 VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" IsReadOnly="True"/>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Start" Margin="5" Width="80" Click="StartButton_Click" IsEnabled="{Binding CanStart}"/>
+            <Button Content="Stop" Margin="5" Width="80" Click="StopButton_Click" IsEnabled="{Binding CanStop}"/>
+        </StackPanel>
+    </Grid>
+</Window>
